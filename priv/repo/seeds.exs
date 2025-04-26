@@ -12,6 +12,23 @@
 
 alias Raffley.Repo
 alias Raffley.Raffles.Raffle
+alias Raffley.Charities.Charity
+
+wildlife =
+  %Charity{name: "Wildlife Refuge", slug: "wildlife-refuge"}
+  |> Repo.insert!()
+
+food =
+  %Charity{name: "Food Pantry", slug: "food-pantry"}
+  |> Repo.insert!()
+
+hope =
+  %Charity{name: "Homes of Hope", slug: "homes-of-hope"}
+  |> Repo.insert!()
+
+grace =
+  %Charity{name: "Grace Foundation", slug: "grace-foundation"}
+  |> Repo.insert!()
 
 %Raffle{
   prize: "Autographed Jersey",
@@ -20,7 +37,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 2,
   status: :open,
-  image_path: "/images/jersey.jpg"
+  image_path: "/images/jersey.jpg",
+  charity: hope
 }
 |> Repo.insert!()
 
@@ -31,7 +49,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 3,
   status: :upcoming,
-  image_path: "/images/yeti-coffee.jpg"
+  image_path: "/images/yeti-coffee.jpg",
+  charity: wildlife
 }
 |> Repo.insert!()
 
@@ -42,7 +61,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 1,
   status: :closed,
-  image_path: "/images/comic-book.jpg"
+  image_path: "/images/comic-book.jpg",
+  charity: food
 }
 |> Repo.insert!()
 
@@ -53,7 +73,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 3,
   status: :open,
-  image_path: "/images/dinner-for-two.jpg"
+  image_path: "/images/dinner-for-two.jpg",
+  charity: hope
 }
 |> Repo.insert!()
 
@@ -64,7 +85,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 2,
   status: :open,
-  image_path: "/images/cooking-class.jpg"
+  image_path: "/images/cooking-class.jpg",
+  charity: food
 }
 |> Repo.insert!()
 
@@ -75,7 +97,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 3,
   status: :upcoming,
-  image_path: "/images/basketball-tickets.jpg"
+  image_path: "/images/basketball-tickets.jpg",
+  charity: grace
 }
 |> Repo.insert!()
 
@@ -86,7 +109,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 1,
   status: :closed,
-  image_path: "/images/chocolate-basket.jpg"
+  image_path: "/images/chocolate-basket.jpg",
+  charity: food
 }
 |> Repo.insert!()
 
@@ -97,7 +121,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 2,
   status: :open,
-  image_path: "/images/pet-photo.jpg"
+  image_path: "/images/pet-photo.jpg",
+  charity: grace
 }
 |> Repo.insert!()
 
@@ -108,7 +133,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 3,
   status: :upcoming,
-  image_path: "/images/swamp-boat-ride.jpg"
+  image_path: "/images/swamp-boat-ride.jpg",
+  charity: wildlife
 }
 |> Repo.insert!()
 
@@ -119,7 +145,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 3,
   status: :upcoming,
-  image_path: "/images/race-car.jpg"
+  image_path: "/images/race-car.jpg",
+  charity: grace
 }
 |> Repo.insert!()
 
@@ -130,7 +157,8 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 2,
   status: :closed,
-  image_path: "/images/coffee.jpg"
+  image_path: "/images/coffee.jpg",
+  charity: hope
 }
 |> Repo.insert!()
 
@@ -141,6 +169,7 @@ alias Raffley.Raffles.Raffle
   """,
   ticket_price: 1,
   status: :upcoming,
-  image_path: "/images/balloon-ride.jpg"
+  image_path: "/images/balloon-ride.jpg",
+  charity: wildlife
 }
 |> Repo.insert!()
