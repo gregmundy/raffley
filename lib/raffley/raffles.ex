@@ -1,6 +1,5 @@
 defmodule Raffley.Raffles do
   alias Raffley.Raffles.Raffle
-  alias Raffley.Charities.Charity
   alias Raffley.Repo
   import Ecto.Query
 
