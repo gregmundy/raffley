@@ -26,6 +26,13 @@ defmodule Raffley.Accounts do
     Repo.get_by(User, email: email)
   end
 
+  def promote_to_admin(%User{} = user) do
+    user
+    |> Ecto.Changeset.change(%{is_admin: true})
+    |> Repo.update()
+  end
+
+
   @doc """
   Gets a user by email and password.
 

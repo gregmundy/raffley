@@ -42,9 +42,13 @@ defmodule RaffleyWeb.Router do
   end
 
   scope "/", RaffleyWeb do
-    pipe_through([:browser, :require_authenticated_user])
+    pipe_through([:browser, :require_authenticated_user, :require_admin])
 
-    live_session :admin, on_mount: [{RaffleyWeb.UserAuth, :ensure_authenticated}] do
+    live_session :admin,
+      on_mount: [
+        {RaffleyWeb.UserAuth, :ensure_authenticated},
+        {RaffleyWeb.UserAuth, :ensure_admin}
+      ] do
       live("/admin/raffles", AdminRaffleLive.Index)
       live("/admin/raffles/new", AdminRaffleLive.Form, :new)
       live("/admin/raffles/:id/edit", AdminRaffleLive.Form, :edit)
